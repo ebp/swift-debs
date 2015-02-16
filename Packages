@@ -1,0 +1,323 @@
+Package: python-swift
+Source: swift
+Version: 2.2.2-0ubuntu1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 1748
+Depends: adduser, python-dnspython (>= 1.10.0), python-eventlet (>= 0.9.8), python-greenlet (>= 0.3.1), python-netifaces, python-openssl, python-paste, python-pastedeploy, python-setuptools, python-simplejson, python-xattr, python (>= 2.7), python (<< 2.8)
+Breaks: swift (<< 1.13.1~rc1-0ubuntu1~)
+Replaces: swift (<< 1.13.1~rc1-0ubuntu1~)
+Provides: python2.7-swift
+Filename: debs/python-swift_2.2.2-0ubuntu1_all.deb
+Size: 288924
+MD5sum: 142f90cb57705d4c180c1fed91014350
+SHA1: 7d8de6ae572441827d92f632c0aa9fcb8fd3d9fe
+SHA256: 7a8c2df330e46be1a0059f3ac068cddfe71f90c45d2de4f370261862507d81cf
+Section: python
+Priority: optional
+Homepage: http://launchpad.net/swift
+Description: distributed virtual object store - Python libraries
+ OpenStack Object Storage (code-named Swift) is open source software for
+ creating redundant, scalable object storage using clusters of standardized
+ servers to store petabytes of accessible data. It is not a file system or
+ real-time data storage system, but rather a long-term storage system for a
+ more permanent type of static data that can be retrieved, leveraged, and then
+ updated if necessary. Primary examples of data that best fit this type of
+ storage model are virtual machine images, photo storage, email storage and
+ backup archiving. Having no central "brain" or master point of control
+ provides greater scalability, redundancy and permanence.
+ .
+ Objects are written to multiple hardware devices in the data center, with
+ the OpenStack software responsible for ensuring data replication and
+ integrity across the cluster. Storage clusters can scale horizontally by
+ adding new nodes. Should a node fail, OpenStack works to replicate its
+ content from other active nodes. Because OpenStack uses software logic to
+ ensure data replication and distribution across different devices,
+ inexpensive commodity hard drives and servers can be used in lieu of more
+ expensive equipment.
+ .
+ This package provides the Python libraries that actually implement
+ everything.
+Original-Maintainer: Soren Hansen <soren@ubuntu.com>
+
+Package: swift
+Version: 2.2.2-0ubuntu1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 128
+Depends: python-swift (= 2.2.2-0ubuntu1), python:any
+Suggests: swift-bench
+Breaks: swift (<< 1.6.0-0ubuntu1)
+Replaces: swift (<< 1.6.0-0ubuntu1)
+Filename: debs/swift_2.2.2-0ubuntu1_all.deb
+Size: 25816
+MD5sum: a03387f076d6542b398d495c1b39c9f7
+SHA1: 0a10cf75b03f9fd435a22fe57f2beb3752c44132
+SHA256: b13d7d59929befd4398655fdfcf42b44fc14445e97324835f41944d92905e7ee
+Section: net
+Priority: optional
+Homepage: http://launchpad.net/swift
+Description: distributed virtual object store - common files
+ OpenStack Object Storage (code-named Swift) is open source software for
+ creating redundant, scalable object storage using clusters of standardized
+ servers to store petabytes of accessible data. It is not a file system or
+ real-time data storage system, but rather a long-term storage system for a
+ more permanent type of static data that can be retrieved, leveraged, and then
+ updated if necessary. Primary examples of data that best fit this type of
+ storage model are virtual machine images, photo storage, email storage and
+ backup archiving. Having no central "brain" or master point of control
+ provides greater scalability, redundancy and permanence.
+ .
+ Objects are written to multiple hardware devices in the data center, with
+ the OpenStack software responsible for ensuring data replication and
+ integrity across the cluster. Storage clusters can scale horizontally by
+ adding new nodes. Should a node fail, OpenStack works to replicate its
+ content from other active nodes. Because OpenStack uses software logic to
+ ensure data replication and distribution across different devices,
+ inexpensive commodity hard drives and servers can be used in lieu of more
+ expensive equipment.
+ .
+ .
+ This package provides some core binaries and clients to control swift.
+Original-Maintainer: Soren Hansen <soren@ubuntu.com>
+
+Package: swift-account
+Source: swift
+Version: 2.2.2-0ubuntu1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 107
+Depends: python-swift (= 2.2.2-0ubuntu1), rsync, lsb-base (>= 4.1+Debian11ubuntu7), python:any
+Breaks: swift (<< 1.13.1~rc1-0ubuntu1~)
+Replaces: swift (<< 1.13.1~rc1-0ubuntu1~)
+Filename: debs/swift-account_2.2.2-0ubuntu1_all.deb
+Size: 18196
+MD5sum: b8f35d4efd2b06b7826083e0d5b27cf4
+SHA1: df377146f56dd150e06116a75ebb51326a217e07
+SHA256: 28e3299e374ffa0b80238d67ed8cebd4998b161b912211e26b226cef5f2447bc
+Section: net
+Priority: optional
+Homepage: http://launchpad.net/swift
+Description: distributed virtual object store - account server
+ OpenStack Object Storage (code-named Swift) is open source software for
+ creating redundant, scalable object storage using clusters of standardized
+ servers to store petabytes of accessible data. It is not a file system or
+ real-time data storage system, but rather a long-term storage system for a
+ more permanent type of static data that can be retrieved, leveraged, and then
+ updated if necessary. Primary examples of data that best fit this type of
+ storage model are virtual machine images, photo storage, email storage and
+ backup archiving. Having no central "brain" or master point of control
+ provides greater scalability, redundancy and permanence.
+ .
+ Objects are written to multiple hardware devices in the data center, with
+ the OpenStack software responsible for ensuring data replication and
+ integrity across the cluster. Storage clusters can scale horizontally by
+ adding new nodes. Should a node fail, OpenStack works to replicate its
+ content from other active nodes. Because OpenStack uses software logic to
+ ensure data replication and distribution across different devices,
+ inexpensive commodity hard drives and servers can be used in lieu of more
+ expensive equipment.
+ .
+ This package provides the swift account server.
+Original-Maintainer: Soren Hansen <soren@ubuntu.com>
+
+Package: swift-container
+Source: swift
+Version: 2.2.2-0ubuntu1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 100
+Depends: python-swift (= 2.2.2-0ubuntu1), rsync, lsb-base (>= 4.1+Debian11ubuntu7), python:any
+Breaks: swift (<< 1.13.1~rc1-0ubuntu1~)
+Replaces: swift (<< 1.13.1~rc1-0ubuntu1~)
+Filename: debs/swift-container_2.2.2-0ubuntu1_all.deb
+Size: 17844
+MD5sum: 4eb979ef72283c3734b6a207a23abed2
+SHA1: 8bdaa1f8eb85d79a792a8c3c30dfb2103b3a857c
+SHA256: 2593e054c8cd73547ea819cfeb3c91a5ff3a7e6bf79218e3abfd38a0c3ca3fca
+Section: net
+Priority: optional
+Homepage: http://launchpad.net/swift
+Description: distributed virtual object store - container server
+ OpenStack Object Storage (code-named Swift) is open source software for
+ creating redundant, scalable object storage using clusters of standardized
+ servers to store petabytes of accessible data. It is not a file system or
+ real-time data storage system, but rather a long-term storage system for a
+ more permanent type of static data that can be retrieved, leveraged, and then
+ updated if necessary. Primary examples of data that best fit this type of
+ storage model are virtual machine images, photo storage, email storage and
+ backup archiving. Having no central "brain" or master point of control
+ provides greater scalability, redundancy and permanence.
+ .
+ Objects are written to multiple hardware devices in the data center, with
+ the OpenStack software responsible for ensuring data replication and
+ integrity across the cluster. Storage clusters can scale horizontally by
+ adding new nodes. Should a node fail, OpenStack works to replicate its
+ content from other active nodes. Because OpenStack uses software logic to
+ ensure data replication and distribution across different devices,
+ inexpensive commodity hard drives and servers can be used in lieu of more
+ expensive equipment.
+ .
+ This package provides the swift container server.
+Original-Maintainer: Soren Hansen <soren@ubuntu.com>
+
+Package: swift-doc
+Source: swift
+Version: 2.2.2-0ubuntu1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 2478
+Depends: libjs-jquery
+Filename: debs/swift-doc_2.2.2-0ubuntu1_all.deb
+Size: 326804
+MD5sum: 3b57251f956431b3cdc35caffc8870a5
+SHA1: be753ca3d719b97c69e723991ece9399270d3359
+SHA256: 41f433bd4bd42e34eb4a2ab8c65290564a98182f59c2c8c4939403f7fd63f418
+Section: doc
+Priority: optional
+Homepage: http://launchpad.net/swift
+Description: distributed virtual object store - documentation
+ OpenStack Object Storage (code-named Swift) is open source software for
+ creating redundant, scalable object storage using clusters of standardized
+ servers to store petabytes of accessible data. It is not a file system or
+ real-time data storage system, but rather a long-term storage system for a
+ more permanent type of static data that can be retrieved, leveraged, and then
+ updated if necessary. Primary examples of data that best fit this type of
+ storage model are virtual machine images, photo storage, email storage and
+ backup archiving. Having no central "brain" or master point of control
+ provides greater scalability, redundancy and permanence.
+ .
+ Objects are written to multiple hardware devices in the data center, with
+ the OpenStack software responsible for ensuring data replication and
+ integrity across the cluster. Storage clusters can scale horizontally by
+ adding new nodes. Should a node fail, OpenStack works to replicate its
+ content from other active nodes. Because OpenStack uses software logic to
+ ensure data replication and distribution across different devices,
+ inexpensive commodity hard drives and servers can be used in lieu of more
+ expensive equipment.
+ .
+ This package provides the Sphinx generated documentation for Swift.
+Original-Maintainer: Soren Hansen <soren@ubuntu.com>
+
+Package: swift-object
+Source: swift
+Version: 2.2.2-0ubuntu1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 101
+Depends: python-swift (= 2.2.2-0ubuntu1), rsync, lsb-base (>= 4.1+Debian11ubuntu7), python:any
+Breaks: swift (<< 1.13.1~rc1-0ubuntu1~)
+Replaces: swift (<< 1.13.1~rc1-0ubuntu1~)
+Filename: debs/swift-object_2.2.2-0ubuntu1_all.deb
+Size: 18750
+MD5sum: 5d4c6438ce12e9f869849d10a2dd2790
+SHA1: 1538da131399c5c3123e22841c9438692a12f789
+SHA256: c64906f9773248e56bc3f931848bc7e2e386aecaf1115016f89612e00e02a471
+Section: net
+Priority: optional
+Homepage: http://launchpad.net/swift
+Description: distributed virtual object store - object server
+ OpenStack Object Storage (code-named Swift) is open source software for
+ creating redundant, scalable object storage using clusters of standardized
+ servers to store petabytes of accessible data. It is not a file system or
+ real-time data storage system, but rather a long-term storage system for a
+ more permanent type of static data that can be retrieved, leveraged, and then
+ updated if necessary. Primary examples of data that best fit this type of
+ storage model are virtual machine images, photo storage, email storage and
+ backup archiving. Having no central "brain" or master point of control
+ provides greater scalability, redundancy and permanence.
+ .
+ Objects are written to multiple hardware devices in the data center, with
+ the OpenStack software responsible for ensuring data replication and
+ integrity across the cluster. Storage clusters can scale horizontally by
+ adding new nodes. Should a node fail, OpenStack works to replicate its
+ content from other active nodes. Because OpenStack uses software logic to
+ ensure data replication and distribution across different devices,
+ inexpensive commodity hard drives and servers can be used in lieu of more
+ expensive equipment.
+ .
+ This package provides the swift object server.
+Original-Maintainer: Soren Hansen <soren@ubuntu.com>
+
+Package: swift-object-expirer
+Source: swift
+Version: 2.2.2-0ubuntu1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 74
+Depends: python-swift (= 2.2.2-0ubuntu1), lsb-base (>= 4.1+Debian11ubuntu7), python:any
+Breaks: swift (<< 1.13.1~rc1-0ubuntu1~), swift-object (<< 1.12.0-0ubuntu2)
+Replaces: swift (<< 1.13.1~rc1-0ubuntu1~), swift-object (<< 1.12.0-0ubuntu2)
+Filename: debs/swift-object-expirer_2.2.2-0ubuntu1_all.deb
+Size: 8482
+MD5sum: 7ae763d13806fd53128fb312cf6d3c32
+SHA1: dc666b1c124fe12b2381594f74f2da8bc0005a2d
+SHA256: 4c120dde128eb8dd8016d4624a8bd9297741192a54607aa138306dfda36aa33d
+Section: net
+Priority: optional
+Homepage: http://launchpad.net/swift
+Description: distributed virtual object store - object expirer
+ OpenStack Object Storage (code-named Swift) is open source software for
+ creating redundant, scalable object storage using clusters of standardized
+ servers to store petabytes of accessible data. It is not a file system or
+ real-time data storage system, but rather a long-term storage system for a
+ more permanent type of static data that can be retrieved, leveraged, and then
+ updated if necessary. Primary examples of data that best fit this type of
+ storage model are virtual machine images, photo storage, email storage and
+ backup archiving. Having no central "brain" or master point of control
+ provides greater scalability, redundancy and permanence.
+ .
+ Objects are written to multiple hardware devices in the data center, with
+ the OpenStack software responsible for ensuring data replication and
+ integrity across the cluster. Storage clusters can scale horizontally by
+ adding new nodes. Should a node fail, OpenStack works to replicate its
+ content from other active nodes. Because OpenStack uses software logic to
+ ensure data replication and distribution across different devices,
+ inexpensive commodity hard drives and servers can be used in lieu of more
+ expensive equipment.
+ .
+ This package provides the object-expirer service that provides scheduled
+ deletion of objects in Swift.
+Original-Maintainer: Soren Hansen <soren@ubuntu.com>
+
+Package: swift-proxy
+Source: swift
+Version: 2.2.2-0ubuntu1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 95
+Depends: python-swift (= 2.2.2-0ubuntu1), lsb-base (>= 4.1+Debian11ubuntu7), python:any
+Breaks: swift (<< 1.13.1~rc1-0ubuntu1~)
+Replaces: swift (<< 1.13.1~rc1-0ubuntu1~)
+Filename: debs/swift-proxy_2.2.2-0ubuntu1_all.deb
+Size: 19314
+MD5sum: d217ed363f27d55fcd2cd2469341d08e
+SHA1: bc3fd76860c83708c58dfde849765f95d50b783e
+SHA256: 963f60bdd912a34a715df3fba611abe3e08ab45d6560e66f0d1f1bc01a5f5b6a
+Section: net
+Priority: optional
+Homepage: http://launchpad.net/swift
+Description: distributed virtual object store - proxy server
+ OpenStack Object Storage (code-named Swift) is open source software for
+ creating redundant, scalable object storage using clusters of standardized
+ servers to store petabytes of accessible data. It is not a file system or
+ real-time data storage system, but rather a long-term storage system for a
+ more permanent type of static data that can be retrieved, leveraged, and then
+ updated if necessary. Primary examples of data that best fit this type of
+ storage model are virtual machine images, photo storage, email storage and
+ backup archiving. Having no central "brain" or master point of control
+ provides greater scalability, redundancy and permanence.
+ .
+ Objects are written to multiple hardware devices in the data center, with
+ the OpenStack software responsible for ensuring data replication and
+ integrity across the cluster. Storage clusters can scale horizontally by
+ adding new nodes. Should a node fail, OpenStack works to replicate its
+ content from other active nodes. Because OpenStack uses software logic to
+ ensure data replication and distribution across different devices,
+ inexpensive commodity hard drives and servers can be used in lieu of more
+ expensive equipment.
+ .
+ This package provides a proxy server on which clients can connect to store
+ object into Swift.
+Original-Maintainer: Soren Hansen <soren@ubuntu.com>
+
