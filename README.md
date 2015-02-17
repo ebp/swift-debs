@@ -23,10 +23,36 @@ sudo apt-get install swift-account swift-container swift-object swift-object-exp
 
 Building
 --------
-These packages were captured from build output of
-https://launchpad.net/ubuntu/+source/swift
+*NOTE: These instructions use v2.2.2 as an example.*
 
-To update, remove the existing files in `debs` and replace them with new
+Install development requirements for .deb and Swift:
+```sh
+sudo apt-get install dpkg-dev devscripts debhelper \
+  python-all-dev python-mock python-nose python-sphinx python-oslosphinx
+```
+
+Fetch the appropriate \*.orig.tar.gz, \*.debian.tar.xz, and \*.dsc from
+https://launchpad.net/ubuntu/+source/swift
+```sh
+# For example:
+wget https://launchpad.net/ubuntu/+archive/primary/+files/swift_2.2.2.orig.tar.gz
+wget https://launchpad.net/ubuntu/+archive/primary/+files/swift_2.2.2-0ubuntu1.debian.tar.xz
+wget https://launchpad.net/ubuntu/+archive/primary/+files/swift_2.2.2-0ubuntu1.dsc
+```
+
+Unpack the source and apply patches:
+```sh
+dpkg-source -x swift_2.2.2-0ubuntu1.dsc
+```
+
+This will create a `swift-2.2.2` directory.
+Generate `.deb` files (as a non-root user):
+```sh
+cd swift-2.2.2
+debuild -us -uc -b
+```
+
+To update, remove the existing files in `debs` and replace them with newly-generated
 packages, then regenerate the `Packages` file:
 ```sh
 ./update-packages.sh
