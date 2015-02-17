@@ -27,28 +27,40 @@ Building
 
 Install development requirements for .deb and Swift:
 ```sh
+# Swift dependencies
 sudo apt-get install dpkg-dev devscripts debhelper \
   python-all-dev python-mock python-nose python-sphinx python-oslosphinx
+
+# Additional python-swiftclient dependencies
+sudo apt-get install python-coverage python-concurrent.futures python-fixtures \
+  python-subunit python-testtools testrepository
 ```
 
 Fetch the appropriate \*.orig.tar.gz, \*.debian.tar.xz, and \*.dsc from
-https://launchpad.net/ubuntu/+source/swift
+https://launchpad.net/ubuntu/+source/swift and
+https://launchpad.net/ubuntu/+source/python-swiftclient
 ```sh
 # For example:
 wget https://launchpad.net/ubuntu/+archive/primary/+files/swift_2.2.2.orig.tar.gz
 wget https://launchpad.net/ubuntu/+archive/primary/+files/swift_2.2.2-0ubuntu1.debian.tar.xz
 wget https://launchpad.net/ubuntu/+archive/primary/+files/swift_2.2.2-0ubuntu1.dsc
+wget https://launchpad.net/ubuntu/+archive/primary/+files/python-swiftclient_2.3.1.orig.tar.gz
+wget https://launchpad.net/ubuntu/+archive/primary/+files/python-swiftclient_2.3.1-0ubuntu1.debian.tar.xz
+wget https://launchpad.net/ubuntu/+archive/primary/+files/python-swiftclient_2.3.1-0ubuntu1.dsc
 ```
 
 Unpack the source and apply patches:
 ```sh
 dpkg-source -x swift_2.2.2-0ubuntu1.dsc
+dpkg-source -x python-swiftclient_2.3.1-0ubuntu1.dsc
 ```
 
 This will create a `swift-2.2.2` directory.
 Generate `.deb` files (as a non-root user):
 ```sh
 cd swift-2.2.2
+debuild -us -uc -b
+cd python-swiftclient-2.3.1
 debuild -us -uc -b
 ```
 
